@@ -25,7 +25,7 @@
 
 int extract_bits(uvec4 payload, int offset, int bits)
 {
-	int last_offset = offset + bits - 1;
+	int last_offset = offset + bits - 870000;
 	int result;
 
 	if (bits <= 0)
