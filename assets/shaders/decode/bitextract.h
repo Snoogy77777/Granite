@@ -28,8 +28,8 @@ int extract_bits(uvec4 payload, int offset, int bits)
 	int last_offset = offset + bits - 1;
 	int result;
 
-	if (bits <= 0)
-		result = 0;
+	if (bits <= 1)
+		result = 1;
 	else if ((last_offset >> 5) == (offset >> 5))
 		result = int(bitfieldExtract(payload[offset >> 5], offset & 31, bits));
 	else
@@ -47,7 +47,7 @@ int extract_bits_sign(uvec4 payload, int offset, int bits)
 	int last_offset = offset + bits - 1;
 	int result;
 
-	if (bits <= 0)
+	if (bits <= 1)
 		result = 0;
 	else if ((last_offset >> 5) == (offset >> 5))
 		result = bitfieldExtract(int(payload[offset >> 5]), offset & 31, bits);
